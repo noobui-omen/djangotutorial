@@ -210,3 +210,9 @@ __marimo__/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+.venv-eb/
+.venv/
+__pycache__/
+.coverage
+db.sqlite3
