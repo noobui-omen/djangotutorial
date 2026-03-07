@@ -1,0 +1,31 @@
+language: python
+python:
+  - "3.12"
+
+dist: jammy
+
+install:
+  - pip install -r requirements-dev.txt
+
+before_script:
+  - python manage.py migrate --noinput
+
+script:
+  - python -m black --check .
+  - python -m flake8 .
+  - coverage run manage.py test
+
+after_success:
+  - coveralls
+
+deploy:
+  provider: elasticbeanstalk
+  edge: true
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  region: us-east-1
+  app: YOUR_EB_APP_NAME
+  env: YOUR_EB_ENV_NAME
+  bucket: YOUR_EB_BUCKET_NAME
+  on:
+    branch: main
