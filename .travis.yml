@@ -24,8 +24,8 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   region: us-east-1
-  app: YOUR_EB_APP_NAME
-  env: YOUR_EB_ENV_NAME
-  bucket: YOUR_EB_BUCKET_NAME
+  app: swe1-polls-app
+  env: swe1-polls-prod
+  bucket: swe1-polls-app
   on:
     branch: main
