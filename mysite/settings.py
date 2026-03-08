@@ -3,10 +3,15 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+if os.path.exists("/var/app"):
+    sqlite_path = "/var/app/data/db.sqlite3"
+else:
+    sqlite_path = BASE_DIR / "db.sqlite3"
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.environ.get("SQLITE_DB_PATH", "/var/app/data/db.sqlite3"),
+        "NAME": sqlite_path,
     }
 }
 
