@@ -6,11 +6,7 @@ SECRET_KEY = "dev-secret-key"
 
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "swe1-polls-prod.eba-p3gacttb.us-east-1.elasticbeanstalk.com",
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "polls.apps.PollsConfig",
