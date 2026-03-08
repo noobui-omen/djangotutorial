@@ -16,7 +16,7 @@ script:
   - coverage run manage.py test
 
 after_success:
-  - coveralls
+  - coveralls --service=github
 
 deploy:
   provider: elasticbeanstalk
